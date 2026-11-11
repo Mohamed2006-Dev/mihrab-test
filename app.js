@@ -26,7 +26,8 @@ languageButton.addEventListener('click', () => {
   setLanguage(document.documentElement.lang === 'ar' ? 'en' : 'ar');
 });
 
-const isAndroid = /Android/i.test(navigator.userAgentData?.platform || navigator.userAgent);
+const isAndroid = [navigator.userAgentData?.platform, navigator.userAgent]
+  .some(value => /Android/i.test(value || ''));
 if (!isAndroid && params.get('steps') !== '1') {
   handoff.hidden = false;
   steps.hidden = true;
