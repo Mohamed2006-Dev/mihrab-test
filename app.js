@@ -1,4 +1,5 @@
 const params = new URLSearchParams(location.search);
+const translations = document.querySelectorAll('span[lang]');
 const languageButton = document.getElementById('language');
 const handoff = document.getElementById('handoff');
 const steps = document.getElementById('steps');
@@ -8,6 +9,9 @@ const qr = document.getElementById('qr');
 function setLanguage(language) {
   document.documentElement.lang = language;
   document.documentElement.dir = language === 'ar' ? 'rtl' : 'ltr';
+  for (const translation of translations) {
+    translation.hidden = translation.lang !== language;
+  }
   languageButton.textContent = language === 'ar' ? 'English' : 'العربية';
   languageButton.lang = language === 'ar' ? 'en' : 'ar';
   qr.src = language === 'ar' ? './qr-ar.png' : './qr-en.png';
