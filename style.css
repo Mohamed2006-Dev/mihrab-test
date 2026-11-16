@@ -1,6 +1,6 @@
 :root{color-scheme:dark;--ink:#f5f4e9;--muted:#bfd1c5;--surface:#12291e;--line:#436653;--gold:#ecd08a;--green:#b1e6c7}
 *{box-sizing:border-box}
-[hidden],html[lang=ar] [lang=en]:not(#language),html[lang=en] [lang=ar]:not(#language){display:none!important}
+[hidden]{display:none!important}
 body{margin:0;background:#0a1b13;color:var(--ink);font:16px/1.65 "Segoe UI",Tahoma,sans-serif}
 .wrap{width:min(930px,calc(100% - 32px));margin:auto;padding-bottom:40px}
 .top{display:flex;justify-content:space-between;align-items:center;padding:15px 0;border-bottom:1px solid var(--line)}
@@ -15,9 +15,8 @@ h1,h2,h3,p{margin:0}
 h1{font-size:clamp(2.4rem,7vw,4.2rem);line-height:1.2;margin:4px 0 10px}
 h2{font-size:1.55rem}
 h3{font-size:1.05rem}
-.eyebrow,.language-note{color:var(--gold)}
+.eyebrow{color:var(--gold)}
 .lead{max-width:57ch;color:var(--muted);font-size:1.09rem}
-.language-note{margin-top:12px;font-size:.91rem}
 .card{background:var(--surface);border:1px solid var(--line);border-radius:17px;padding:clamp(16px,4vw,25px);margin-top:14px}
 .card p{color:var(--muted)}
 .handoff{display:grid;grid-template-columns:1fr auto;align-items:center;gap:18px}
